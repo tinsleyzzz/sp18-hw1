@@ -1,15 +1,25 @@
 def squared_sum(a, b)
   # Q1 CODE HERE
+  return (a + b) ** 2
 
 end
 
 def sort_array_plus_one(a)
   # Q2 CODE HERE
+  l = a.length
+  ary = a.sort
+  i = 0
+  while i < l
+    ary[i] += 1
+    i += 1
+  end
+  return ary
 
 end
 
 def combine_name(first_name, last_name)
   # Q3 CODE HERE
+  return first_name + ' ' + last_name
 
 end
 
@@ -17,7 +27,9 @@ def blockin_time(a)
   # DO NOT EDIT THIS CODE BELOW
   require './foobar'
   Foobar.baz a
+
 end
+
 
 def scrabble(word)
   values = {
@@ -49,4 +61,22 @@ def scrabble(word)
     z: 10,
   }
   # Q5 CODE HERE
+  
+  letters = word.split("")
+  sum = 0
+  n = letters.length
+  ary = Array.new(n)
+  for j in letters
+    if values.has_key? j.to_sym
+      b = values[j.to_sym]
+      ary.push(b) 
+
+    end
+  end
+  ary.each {|a| sum += a unless a == nil}
+
+  return sum
+
 end
+
+
